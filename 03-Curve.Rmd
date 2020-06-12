@@ -1,0 +1,51 @@
+
+# Lagged Fibonacci generator
+
+Another cool PRNG that is supposed to be an improvement on the LCG is called the Lagged Fibonacci generator. As its name suggests, it is based on the Fibonacci sequence.
+
+
+The inputs are:
+
+- *m* the modulus
+- *j* a starting number (seed)
+- *k* another starting number > j (seed)
+
+
+To get the next number in the sequence, go back j numbers in the sequence, and go back k numbers in the sequence, add those numbers, and then mod m.
+
+In code it looks like this:
+```{r}
+k = 13
+j = 5
+m = 2^4
+
+LFG <- function(n, m, j, k){
+  if(n <= 1) {
+    return(n)
+  } else {
+    return(LFG(n-k, m, j, k) + LFG(n-j, m, j, k) %% m)
+  }
+}
+```
+
+
+
+```{r}
+results <- c()
+for (i in 1:100) {
+  x <- LFG(i, m, j, k)
+  results <- c(results, x)
+}
+```
+
+```{r, message=FALSE}
+ggplot() +
+  geom_histogram(aes(results))
+```
+
+
+Note I'm generating less numbers this time because this algorithm takes longer to run.
+
+
+
+

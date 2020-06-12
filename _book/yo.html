@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Yo | Pseudo Random Number Generators in R</title>
+  <meta name="description" content="2 Yo | Pseudo Random Number Generators in R" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Yo | Pseudo Random Number Generators in R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Yo | Pseudo Random Number Generators in R" />
+  
+  
+  
+
+<meta name="author" content="Ryan Nevils" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="external-inouts.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Motivation and Background</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#random-numbers"><i class="fa fa-check"></i><b>1.1</b> Random Numbers!</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#types-of-random-number-generators"><i class="fa fa-check"></i><b>1.2</b> Types of Random Number Generators</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="yo.html"><a href="yo.html"><i class="fa fa-check"></i><b>2</b> Yo</a></li>
+<li class="chapter" data-level="3" data-path="external-inouts.html"><a href="external-inouts.html"><i class="fa fa-check"></i><b>3</b> external inouts</a></li>
+<li class="chapter" data-level="4" data-path="non-harware-implementations.html"><a href="non-harware-implementations.html"><i class="fa fa-check"></i><b>4</b> non-harware implementations</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="non-harware-implementations.html"><a href="non-harware-implementations.html#important"><i class="fa fa-check"></i><b>4.0.1</b> important</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pseudo Random Number Generators in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="yo" class="section level1">
+<h1><span class="header-section-number">2</span> Yo</h1>
+<p>testing making a <strong>second chapter</strong>.</p>
+
+<p>first, what dies it mean for a sequence of numbers to be “random” how do we define this or measure it statistically?
+- many different statistical tests
+- compute the running avg
+- plot a histogram
+- well if the only criterial is that at infinity steps the sequence is uniform, then can just go in order (ex if [0,4], just generate 0,1,2,3,4 and repeat)</p>
+<p>same pattern of numbers showing up indicates its not random…eventually all sequences of PRNs repeat tho
+- can use the notion of “peroid” to deretmine how good it is? (example)</p>
+<ul>
+<li>use trancendental numbers? or just pi? (what kind of number is that, the one where we can’t predict the next digit)</li>
+<li>use primes?</li>
+</ul>
+<p>extra bonus chapter on pi:
+- seems to pass most random tests and we can’t predict that the nth digit is, but we all know the digits of pi aren’t “random”… because they come from a well known geometric relation</p>
+<ul>
+<li>we believe Pi is a “normal number” meaning its digits are disrtibuted very evenly</li>
+</ul>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="external-inouts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

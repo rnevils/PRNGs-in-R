@@ -1,0 +1,5 @@
+# Creating other distributions
+
+As you might have noticed, these random number generators only give us uniform distributions of integers. Usually we like to get our random number between 0 and 1, so we can just divide our sequence by the max integer it can produce, no problem. But what if we want to generate another distribution like a normal or exponential? We, use something called **inverse transform sampling**. As long as we have the Cumulative distribution function for the distribution we are looking for, we can transform it. We take our numbers between 0 and 1, and then find what values of the CDF would output those uniform values.
+
+

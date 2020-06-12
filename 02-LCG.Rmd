@@ -1,0 +1,50 @@
+# Linear congruential generator
+
+We clearly need a better PRNG than middle-square if we want to have any hope of simulating random events. Luckily there have been many new ideas since 1949. Today, the most widely used general purpose PRNG is called the Mersenne Twister. It was developed in 1997 by Makoto Matsumoto Takuji Nishimura to overcome the flaws of the old PRNGs. This particular algorithm is used as the default PRNG in python, r, c++, and many more programming languages. The Mersenne Twister is based of of a simpler algorithm called a "Linear congruential generator" which we will look at
+
+The algorithim takes in *4* inputs (as opposed to just the 1 that middle-square did). the inputs are :
+- *m* the modulus
+- *a* the multiplier
+- *c* the increment
+- *X_0* the seed
+
+
+```{r}
+LCG <- function(m, a, c, X_0){
+  return((a * X_0 + c) %% m)
+}
+```
+
+
+With this method, we want to pick a large value for m, such as 2^32
+
+```{r}
+m <- 2^32
+a <- 123
+c <- 4298
+X_0 <- 3123
+
+LCG(m, a, c, X_0)
+```
+
+
+lets look at a distribution and plot it
+```{r}
+results <- X_0
+
+for (i in 1:1000) {
+  X_0 <- LCG(m, a, c, X_0)
+  results <- c(results, X_0)
+}
+```
+
+
+
+```{r, message=FALSE, warning=FALSE}
+ggplot() +
+  geom_histogram(aes(results))
+```
+
+
+
+Wow, much better than the middle square. Notice how there isn't an obvious pattern that got repeated. This means that this algorithm has a much higher period, which is one of the main ways to determine how "good" as PRNG is.

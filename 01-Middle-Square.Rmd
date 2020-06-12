@@ -1,0 +1,49 @@
+
+# Middle-Square
+
+The first PRNG algorithm we'll look at is one of the very first to be popularized (1949) and was credited to John von Neumann. The implementation for an n-digit number sequence is as follows
+
+- Take a starting seed number and square it
+- If the result has fewer than 2n digits, leading zeroes are added to compensate
+- The middle n digits of the result become the next number
+
+And that's it!
+
+Here is an implementation in r:
+
+```{r}
+middle_square <- function(seed){
+  n <- 4
+  result <- toString(seed^2)
+  while (nchar(result) < n * 2){
+    result <- paste0("0", result)
+  }
+  return(as.numeric(substr(result, 3, 6)))
+}
+```
+
+Lets take a look at it in R and see what kind of random sequences it produces. Our generator will take in a 4 digit number as the seed
+
+```{r}
+seed <- 2341
+results <- seed
+for (i in 1:1000) {
+  seed <- middle_square(seed)
+  results <- c(results, seed)
+}
+```
+
+
+
+Histogram of our results to see the distribution of numbers
+```{r, message=FALSE}
+library(tidyverse)
+ggplot() +
+  geom_histogram(aes(results))
+```
+
+**OOF** what happened?
+
+We started off good, but then hit a point which had a very small *peroid*. This means it repeats itself very quickly. As we can see from the histogram, we ran into a point which had a peroid of 4 and it kept looping between those numbers.  
+
+
